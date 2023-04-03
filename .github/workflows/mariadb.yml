@@ -1,0 +1,22 @@
+name: mariadb CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+       mariadb:
+              image: mariadb
+              restart: always
+              env:
+                  MARIADB_ROOT_PASSWORD: {{ secrets.SQL_PASS }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: apt install -y mariadb-clien
+    - run: mysql -h mariadb -u root -p {{ secret.SQL_PASS }} < test.sql
