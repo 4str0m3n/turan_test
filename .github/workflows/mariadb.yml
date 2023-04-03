@@ -13,9 +13,9 @@ jobs:
        mariadb:
           image: mariadb
           env:
-              MARIADB_ROOT_PASSWORD: {{ secret.SQL_PASS }}
+              MARIADB_ROOT_PASSWORD: testpass
 
     steps:
     - uses: actions/checkout@v2
     - run: apt install -y mariadb-clien
-    - run: mysql -h mariadb -u root -p {{ secret.SQL_PASS }} < test.sql
+    - run: mysql -h mariadb -u root -p testpass < test.sql
