@@ -17,5 +17,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: apt install -y mariadb-clien
+    - run: apt install -y mariadb-client
     - run: mysql -h mariadb -u root -p testpass < test.sql
