@@ -12,7 +12,6 @@ jobs:
     services:
        mariadb:
               image: mariadb
-              restart: always
               env:
                   MARIADB_ROOT_PASSWORD: {{ secrets.SQL_PASS }}
 
