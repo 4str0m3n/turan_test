@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     services:
        mariadb:
-              image: mariadb
-              env:
-                  MARIADB_ROOT_PASSWORD: {{ secrets.SQL_PASS }}
+          image: mariadb
+          env:
+              MARIADB_ROOT_PASSWORD: {{ secret.SQL_PASS }}
 
     steps:
     - uses: actions/checkout@v2
