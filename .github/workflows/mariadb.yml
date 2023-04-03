@@ -18,4 +18,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: sudo apt install -y mariadb-client
-    - run: mysql -h localhost -u root -p testpass < test.sql
+    - run: mysql -h 127.0.0.1 -u root -p testpass < test.sql
